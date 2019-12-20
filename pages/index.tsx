@@ -1,15 +1,30 @@
 import React from 'react'
 import { Jumbotron, Button, Container, Row, Col } from 'reactstrap'
+import TypedText from '../components/TypedText'
 import Clients from '../components/Clients'
 import Services from '../components/Services'
+import Face from '../components/Face'
 import constants from '../data/constants.json'
 
-export default (props: {}) => (
-  <div>
+export default () => (
+  <>
     <Jumbotron className='hero bg-dark text-white d-flex align-items-center rounded-0'>
       <Container>
         {style}
-        <h1 className='mb-4'>./Innovation with a mission</h1>
+        <h1 className='mb-4'>
+          <TypedText
+            text={[
+              './Innovation with a mission',
+              './Programming with purpose',
+              './Do good. ^200Write code',
+              './Made with code',
+              './Made with ^500❤️',
+              '#include git.c',
+              'class Coders extends Causes',
+              'sudo rm -rf /'
+            ]}
+          />
+        </h1>
       </Container>
     </Jumbotron>
     <Container className='py-5 my-5'>
@@ -25,7 +40,7 @@ export default (props: {}) => (
       </Button>
     </Container>
     <div className='bg-light'>
-      <Container className='py-5'>
+      <Container className='bg-light py-5'>
         <Clients />
       </Container>
     </div>
@@ -42,12 +57,12 @@ export default (props: {}) => (
             </a>
           </Col>
           <Col sm={4} className='d-none d-sm-block'>
-            <h1 className='display-1 text-right'>;)</h1>
+            <Face />
           </Col>
         </Row>
       </Container>
     </div>
-  </div>
+  </>
 )
 
 const style = (
@@ -56,5 +71,6 @@ const style = (
       margin-top: 64px;
       height: 500px;
     }
-  `}</style>
+  `}
+  </style>
 )
