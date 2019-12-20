@@ -9,19 +9,19 @@ export default () => {
     .sort(randomise)
     .slice(0, Math.min(4, clients.length))
   return (
-    <Row className='justify-content-center'>
+    <Row className="justify-content-center">
       {style}
       {clientsSample.map(client => (
         <Col
           xs={6}
           md={2}
           key={client.name}
-          className='d-flex align-items-center mb-4 mb-md-0 justify-content-center'
+          className="d-flex align-items-center mb-4 mb-md-0 justify-content-center"
         >
           <img
             src={client.logo}
             alt={client.name}
-            className='img-fluid client-logo'
+            className="img-fluid client-logo"
           />
         </Col>
       ))}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { DropdownMenu, DropdownItem, Dropdown } from 'reactstrap'
 import DropdownToggle from 'reactstrap/lib/DropdownToggle'
 import HeaderLink from '../HeaderLink'
-import Link from 'next/link'
+import style from './style'
 
-export default function (props: Props) {
-  const { items, href, text } = props
+export default ({ items, href, text, ...props }: Props) => {
   const [isOpen, updateIsOpen] = useState(false)
   return (
     <Dropdown
@@ -18,12 +18,12 @@ export default function (props: Props) {
       isOpen={isOpen}
     >
       {style}
-      <DropdownToggle nav className='header-dropdown-toggle'>
+      <DropdownToggle nav className="header-dropdown-toggle">
         <Link href={href}>
           <span>{text}</span>
         </Link>
       </DropdownToggle>
-      <DropdownMenu className='header-dropdown-menu'>
+      <DropdownMenu className="header-dropdown-menu">
         {items.map(item => (
           <DropdownItem key={item.href}>
             <HeaderLink href={item.href} text={item.text} />
@@ -33,20 +33,6 @@ export default function (props: Props) {
     </Dropdown>
   )
 }
-
-const style = (
-  <style jsx>{`
-    .header-dropdown-menu {
-      border: 0;
-    }
-    a.header-dropdown-toggle {
-      color: #ffffff;
-    }
-    .header-dropdown-menu a {
-      color: #000 !important;
-    }
-  `}</style>
-)
 
 interface Props {
   items: Array<{
