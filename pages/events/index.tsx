@@ -3,9 +3,7 @@ import { Jumbotron, Container } from 'reactstrap'
 
 import Events from '../../components/Events'
 
-import workshopEvents from '../../data/events_workshop.json'
-import industryEvents from '../../data/events_industry.json'
-import socialEvents from '../../data/events_social.json'
+import eventsData from '../../data/events.json'
 
 export default () => (
   <>
@@ -16,23 +14,20 @@ export default () => (
       </Container>
     </Jumbotron>
     <Container>
-      <Events type='Workshops' direction='right' events={workshopEvents} />
-      <Events
-        type='Industry Meetups'
-        direction='left'
-        events={industryEvents}
-      />
-      <Events type='Social Events' direction='right' events={socialEvents} />
+      <Events type='workshop' direction='right' events={eventsData} />
+      <Events type='industry' direction='left' events={eventsData} />
+      <Events type='social' direction='right' events={eventsData} />
     </Container>
   </>
 )
 
 const style = (
-  <style jsx>{`
-    .jumbotron {
-      margin-top: 64px;
-      height: 300px;
-    }
-  `}
+  <style jsx>
+    {`
+      .jumbotron {
+        margin-top: 64px;
+        height: 300px;
+      }
+    `}
   </style>
 )

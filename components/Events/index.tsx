@@ -39,6 +39,7 @@ const Events = (props: EventProps) => (
         </h1>
       </div>
       {props.events
+        .filter(event => event.type === props.type)
         .sort((e1, e2) => compareEventsByDate(e1, e2))
         .map(event => (
           <EventCard
