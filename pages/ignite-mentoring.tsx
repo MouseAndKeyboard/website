@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Row, Col } from 'reactstrap'
 import ProjectBanner from '../components/ProjectBanner'
-import { CommitteeCard } from '../components/Committee'
+import CommitteeCard from '../components/Committee'
 import project from '../data/ignite-mentoring.json'
 
 export default (props: {}) => (
