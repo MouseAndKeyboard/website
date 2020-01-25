@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'reactstrap'
 import Link from 'next/link'
 import projects from '../../data/projects.json'
+import ProjectCard from './ProjectCard'
 
 export default () => {
   return (
@@ -15,7 +16,10 @@ export default () => {
         >
           <Link href={project.purl}>
             <a className="text-decoration-none">
-              <img
+              <ProjectCard project={project} />
+            </a>
+          </Link>
+          {/* <img
                 src={project.logo}
                 alt={project.client}
                 className="img-fluid w-100 d-block align-self-center"
@@ -26,9 +30,7 @@ export default () => {
               />
               <h4 className="font-weight-bold d-inline-block mx-1 text-align-bottom text-dark">
                 {project.name}
-              </h4>
-            </a>
-          </Link>
+              </h4> */}
         </Col>
       ))}
     </Row>
