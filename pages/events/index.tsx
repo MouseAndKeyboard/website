@@ -10,19 +10,19 @@ import socialEvents from '../../data/events_social.json'
 export default () => (
   <>
     {style}
-    <Jumbotron className="bg-dark text-white d-flex align-items-center rounded-0">
+    <Jumbotron className='bg-dark text-white d-flex align-items-center rounded-0'>
       <Container style={{ width: '90%' }}>
         <h1>Events</h1>
       </Container>
     </Jumbotron>
     <Container>
-      <Events type="Workshops" direction="right" events={workshopEvents} />
+      <Events type='Workshops' direction='right' events={workshopEvents} />
       <Events
-        type="Industry Meetups"
-        direction="left"
+        type='Industry Meetups'
+        direction='left'
         events={industryEvents}
       />
-      <Events type="Social Events" direction="right" events={socialEvents} />
+      <Events type='Social Events' direction='right' events={socialEvents} />
     </Container>
   </>
 )
@@ -33,5 +33,6 @@ const style = (
       margin-top: 64px;
       height: 300px;
     }
-  `}</style>
+  `}
+  </style>
 )
