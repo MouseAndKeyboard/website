@@ -1,33 +1,17 @@
-import React from 'react'
-import style from './style'
+import React, { useState } from 'react'
 
-export default class Face extends React.Component <{}, { face: string }> {
-  constructor (props: Readonly<{}>) {
-    super(props)
-    this.state = { face: ':)' }
-    this.handleOnMouseover = this.handleOnMouseover.bind(this)
-    this.handleOnMouseout = this.handleOnMouseout.bind(this)
-  }
+const Face = () => {
+  const [face, setFace] = useState(':)')
 
-  handleOnMouseover () {
-    this.setState({ face: ';)' })
-  }
-
-  handleOnMouseout () {
-    this.setState({ face: ':)' })
-  }
-
-  render () {
-    return (
-      <div>
-        {style}
-        <h1
-          className='display-1 face'
-          onMouseEnter={this.handleOnMouseover}
-          onMouseLeave={this.handleOnMouseout}
-        >{this.state.face}
-        </h1>
-      </div>
-    )
-  }
+  return (
+    <h1
+      className="display-1 m-0"
+      onMouseEnter={() => setFace(';)')}
+      onMouseLeave={() => setFace(':)')}
+    >
+      {face}
+    </h1>
+  )
 }
+
+export default Face

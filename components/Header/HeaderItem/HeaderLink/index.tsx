@@ -1,26 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import NavLink from 'reactstrap/lib/NavLink'
+import style from './style'
 
 export default ({ href, text }: Props) => (
-  <>
+  <span>
     {style}
     <Link href={href}>
-      <NavLink className='header-link' data-tid={`nav-${text}`}>
+      <NavLink className="header-link" data-tid={`nav-${text}`}>
         {text}
       </NavLink>
     </Link>
-  </>
-)
-
-const style = (
-  <style jsx>{`
-    .navbar-dark .navbar-nav .nav-link,
-    a.header-link {
-      color: #ffffff;
-      cursor: pointer;
-    }
-  `}</style>
+  </span>
 )
 
 interface Props {
