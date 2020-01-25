@@ -35,7 +35,7 @@ const Events = (props: EventProps) => (
           className='mb-0'
           style={{ textAlign: props.direction === 'right' ? 'left' : 'right' }}
         >
-          {props.type}
+          {props.type.charAt(0).toUpperCase() + props.type.substring(1)}
         </h1>
       </div>
       {props.events
