@@ -11,8 +11,8 @@ it('should be able to navigate', () => {
   cy.contains('Events')
 
   cy.get('[data-tid="nav-Projects"]').click()
-  cy.contains('404')
+  cy.contains('Projects')
 
   cy.get('[data-tid="nav-About"]').click()
-  cy.contains('404')
+  cy.contains('About')
 })
